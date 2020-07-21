@@ -36,7 +36,7 @@ if ($_SESSION['username'] != "NULL") {
                 <div class="list-group list-group-flush">
                     <?php
                     require('connect.php');
-                    $result = mysqli_query($con, "SELECT * FROM announcement  LIMIT 10");
+                    $result = mysqli_query($con, "SELECT * FROM announcement ");
                     while ($row = mysqli_fetch_assoc($result)) {
                         $teacher_name = $row['teacher_name'];
                         $subject_name = $row['subject_name'];
@@ -49,19 +49,19 @@ if ($_SESSION['username'] != "NULL") {
                         </div>
                     <?php
                     } ?>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Annoucement2</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Announcement2</a>
 
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Annoucement top 10 only</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light"></a>
                 </div>
             </div>
         </div>
 
         <div class="col-sm-12 col-md-6 justify-content-center m-3 card" style="border: 1px solid grey;">
             <div class="card-header">
-                <h4 align="center">Annoucement</h4>
+                <h4 align="center">Announcement</h4>
             </div>
             <div class="card-body ">
-                <form method="post" id="user_register_form" action="sqlannouncement.php" style="width:25em;">
+                <form method="post" id="user_register_form" action="sqlannouncementadmin.php" style="width:25em;">
 
                     <div class="form-group">
                         <label>Admin ID</label>

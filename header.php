@@ -34,7 +34,7 @@ session_start();
 
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark position: sticky;">
-        <a class="navbar-brand" href="index.php">LOGO</a>
+        <a class="navbar-brand" href="index.php"><img src="img/logo.png" alt="LOGO" height="40em"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>

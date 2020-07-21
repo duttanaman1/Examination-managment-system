@@ -133,7 +133,7 @@ if ($_SESSION['username'] != "NULL") {
                                 </button>
                             </h2>
                         </div>
-                        <div id="<?php echo  "abc" . $subject_id;  ?>" class="collapse show" aria-labelledby="<?php echo  "abc" . $subject_id . "_";  ?>" data-parent="#accordionExample">
+                        <div id="<?php echo  "abc" . $subject_id;  ?>" class="collapse" aria-labelledby="<?php echo  "abc" . $subject_id . "_";  ?>" data-parent="#accordionExample">
                             <div class="card-body">
                                 <table class="table table-hover table-bordered table-responsive-md table-sm">
                                     <thead>
@@ -200,48 +200,18 @@ if ($_SESSION['username'] != "NULL") {
                 <?php
                 }
                 ?>
-
-                <div class="card">
-                    <div class="card-header" id="headingTwo">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Subject 2
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
-                            Description
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="head">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#coll" aria-expanded="false" aria-controls="collapseTwo">
-                                Subject 3
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="coll" class="collapse" aria-labelledby="head" data-parent="#accordionExample">
-                        <div class="card-body">
-                            description
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
         <div class="col-sm-12 col-md-4 my-3">
-            <h2>Update Exam <?php echo $exam_id ?></h2>
+            <h2>Add Subjects </h2>
             <form action="sqladdsubject.php" class="row my-5 bg-info bg-light" method="POST">
 
                 <div class="col-md-4 my-3">subject_id</div>
-                <div class="col-md-7 my-3"><input type="tel" name="subject_id"></div>
+                <div class="col-md-7 my-3"><input type="tel" name="subject_id" class="form-control"></div>
                 <div class="col-md-4 my-3">title</div>
-                <div class="col-md-7 my-3"><input type="text" name="title"></div>
+                <div class="col-md-7 my-3"><input type="text" name="title" class="form-control"></div>
                 <div class="col-md-4 my-3">teacher_id</div>
-                <div class="col-md-7 my-3"><input type="tel" name="teacher_id"></div>
+                <div class="col-md-7 my-3"><input type="tel" name="teacher_id" class="form-control"></div>
                 <div class="col-md-12 my-2"> <input type="submit" name="submit" value="ADD" class="btn btn-info"></div>
             </form>
         </div>

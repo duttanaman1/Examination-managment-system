@@ -10,7 +10,7 @@ if ($_SESSION['username'] != "NULL") {
             <br /><br />
             <div class="card" style="margin-top:50px;margin-bottom: 100px;">
                 <div class="card-header">
-                    <h4>User Registration</h4>
+                    <h4>Admin Registration</h4>
                 </div>
                 <div class="card-body ">
                     <span id="message"></span>
@@ -37,9 +37,6 @@ if ($_SESSION['username'] != "NULL") {
                             <input type="submit" id="user_register" class="btn btn-info" value="Register" name="submit" />
                         </div>
                     </form>
-                    <div align="center">
-                        <a href="login.php">Login</a>
-                    </div>
                 </div>
             </div>
             <br /><br />

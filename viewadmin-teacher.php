@@ -11,7 +11,7 @@ if ($_SESSION['username'] != "NULL") {
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav text-white">
 
                 <li class="nav-item">
                     <a class="nav-link" href="viewadmin.php">Announcement</a>
@@ -29,7 +29,7 @@ if ($_SESSION['username'] != "NULL") {
     <div class="container-fluid row">
         <div class="col-sm-12 col-md-7 my-5">
             <table class="table table-hover table-bordered table-responsive-md">
-                <thead>
+                <thead class="bg-primary text-white">
                     <tr>
                         <th scope="col">teacher_id</th>
                         <th scope="col">email</th>
@@ -52,13 +52,6 @@ if ($_SESSION['username'] != "NULL") {
                         </tr>
                     <?php
                     } ?>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-
-                    </tr>
-
                 </tbody>
             </table>
         </div>

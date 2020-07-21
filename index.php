@@ -68,7 +68,7 @@
 <body>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.php">LOGO</a>
+        <a class="navbar-brand" href="index.php"><img src="img/logo.png" alt="LOGO" height="40em"></a>
         <form class="form-inline my-2 my-lg-0 mr-auto ml-4">
             <input class="form-control mr-2" type="search" placeholder="Search Courses" aria-label="Search" />
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
@@ -151,30 +151,30 @@
                 <div class="col-lg-6">
                     <div class="section-title">
                         <h2>Our Program</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate eum, sunt amet magni sed dicta eius possimus sequi assumenda eveniet veritatis dolore tempora nobis, inventore eos officiis consequatur. Odio, incidunt?</p>
+                        <p>A wiki is a Web site that allows users to add and update content on the site using their own Web browser. This is made possible by Wiki software that runs on the Web server. Wikis end up being created mainly by a collaborative effort of the site visitors.</p>
                     </div>
                     <div class="services-items">
                         <div class="single-service-item">
                             <img src="img/slide3.jpg" alt="">
-                            <h5>Weight Lifting</h5>
+                            <h5>Examination 1</h5>
                             <p>We have a wide choice of classes that are a great complement to any training programme.
                             </p>
                         </div>
                         <div class="single-service-item color-1">
                             <img src="img/slide2.jpg" alt="">
-                            <h5>Body Building</h5>
+                            <h5>Examination 2</h5>
                             <p>We have a wide choice of classes that are a great complement to any training programme.
                             </p>
                         </div>
                         <div class="single-service-item color-2">
                             <img src="img/slide3.jpg" alt="">
-                            <h5>Healthy</h5>
+                            <h5>Examination 3</h5>
                             <p>We have a wide choice of classes that are a great complement to any training programme.
                             </p>
                         </div>
                         <div class="single-service-item color-3">
                             <img src="img/slide2.jpg" alt="">
-                            <h5>Yoga</h5>
+                            <h5>Examination 4</h5>
                             <p>We have a wide choice of classes that are a great complement to any training programme.
                             </p>
                         </div>
