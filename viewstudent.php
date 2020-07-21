@@ -98,7 +98,7 @@ if ($_SESSION['username'] != "") {
                                                         <td><?php echo $datetime; ?></td>
                                                         <td><?php echo $price; ?></td>
                                                         <td>
-                                                            <form action="sqlpayment.php" method="POST">
+                                                            <form action="sqlenroll.php" method="POST">
                                                                 <input type="hidden" name="exam_id" value="<?php echo $exam_id ?>">
                                                                 <input type="hidden" name="std_name" value="<?php echo $usr ?>">
                                                                 <input type="hidden" name="price" value="<?php echo $price ?>">

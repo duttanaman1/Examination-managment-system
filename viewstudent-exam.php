@@ -52,14 +52,31 @@ if ($_SESSION['username'] != "") {
                                 <td><?php echo $student_id; ?></td>
                                 <td><?php echo $subject_id; ?></td>
                                 <td><?php echo $exam_id; ?></td>
-                                <td>
-                                    <form action="viewstudent-takeexam.php" method="POST">
-                                        <input type="hidden" name="student_id" value="<?php echo $student_id; ?>">
-                                        <input type="hidden" name="exam_id" value="<?php echo $exam_id; ?>">
-                                        <input type="submit" value="Take Exam" name="submit" class="btn btn-info">
+                                <?php
+                                if ($row['pay'] == "notpaid") {
+                                ?><td>
+                                        <form action="sqlpayment.php" method="POST">
+                                            <input type="hidden" name="enrollid" value="<?php echo $row['enroll_id']; ?>">
+                                            <input type="hidden" name="price" value="<?php echo $row['price']; ?>">
+                                            <input type="submit" value="Pay Rs<?php echo $row['price']; ?>" name="register" class="btn btn-warning">
 
-                                    </form>
-                                </td>
+                                        </form>
+                                    </td>
+                                <?php
+                                } else {
+                                ?>
+                                    <td>
+                                        <form action="viewstudent-takeexam.php" method="POST">
+                                            <input type="hidden" name="student_id" value="<?php echo $student_id; ?>">
+                                            <input type="hidden" name="exam_id" value="<?php echo $exam_id; ?>">
+                                            <input type="submit" value="Take Exam" name="submit" class="btn btn-success">
+
+                                        </form>
+                                    </td>
+                                <?php
+                                }
+                                ?>
+
                             </tr>
                     <?php
                         }

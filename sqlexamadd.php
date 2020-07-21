@@ -38,7 +38,7 @@ if ($_POST['submit'] != null) {
             $_SESSION['count'] = 0;
 
             ?>
-            <input type="submit" name="submit" class="btn btn-primary" value="add questions">
+            <input type="submit" name="submit" class="btn btn-primary" value="Add questions">
         </form>
 <?php
     } else {

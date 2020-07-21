@@ -2,6 +2,7 @@
 include('header.php');
 if ($_SESSION['username'] != "") {
     $usr = $_SESSION['username'];
+
 ?>
     <nav class="navbar navbar-expand-sm bg-info navbar-dark ">
 
@@ -27,11 +28,11 @@ if ($_SESSION['username'] != "") {
         <!-- announcement view -->
         <div class="col-sm-12 col-md-3 my-3">
             <div class="bg-light border-right p-3">
-                <div class="sidebar-heading">Annoucement </div>
+                <div class="sidebar-heading">Announcement </div>
                 <div class="list-group list-group-flush">
                     <?php
                     require('connect.php');
-                    $result = mysqli_query($con, "SELECT * FROM announcement  LIMIT 10");
+                    $result = mysqli_query($con, "SELECT * FROM announcement  ");
                     while ($row = mysqli_fetch_assoc($result)) {
                         $teacher_name = $row['teacher_name'];
                         $subject_name = $row['subject_name'];
@@ -44,9 +45,9 @@ if ($_SESSION['username'] != "") {
                         </div>
                     <?php
                     } ?>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Annoucement2</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Announcement2</a>
 
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Annoucement top 10 only</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light"></a>
                 </div>
             </div>
         </div>
@@ -55,7 +56,7 @@ if ($_SESSION['username'] != "") {
 
             <form method="post" id="user_register_form" action="sqlannouncement.php" style="width:25em;">
                 <div class="form-group">
-                    <h2 class=" px-5  my-3">Announcement</h2>
+                    <h2 class=" px-5  my-3">Announceement</h2>
                 </div>
                 <div class="form-group">
                     <label>Teacher ID</label>
@@ -82,7 +83,27 @@ if ($_SESSION['username'] != "") {
                 </div>
             </form>
         </div>
-        <div class="col-sm-12 col-md-4 justify-content-center my-3" style="border:1px solid red"></div>
+        <div class="col-sm-12 col-md-4 justify-content-center my-3" style="border:1px solid grey">
+            <div class="list-group m-3">
+                <h3>List of Subjects Specified by teacher</h3>
+                <?php
+                $teach = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM teacher where email='$usr'"));
+                $teachid = $teach['teacher_id'];
+                $subsql = mysqli_query($con, "SELECT * FROM subject where teacher_id='$teachid'");
+                if (mysqli_num_rows($subsql) > 0) {
+                    while ($sub = mysqli_fetch_assoc($subsql)) {
+                ?>
+                        <button type="button" class="list-group-item list-group-item-action">
+                            <?php echo $sub['subject_id'] . " " . $sub['title']; ?>
+                        </button>
+                <?php
+                    }
+                }
+                ?>
+
+
+            </div>
+        </div>
 
 
         </body>
