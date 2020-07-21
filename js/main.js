@@ -1,1 +1,1 @@
-console.log('Working');
+console.log("main.js");

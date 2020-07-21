@@ -34,7 +34,7 @@
     <div class="container">
       <div class="logo">
         <a href="../index.html">
-          LOGO
+          <img src="img/logo.png" alt="LOGO" height="40em">
         </a>
       </div>
       <div class="nav-menu">
