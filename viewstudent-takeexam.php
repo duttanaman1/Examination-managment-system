@@ -68,9 +68,78 @@ if ($_SESSION['username'] != "") {
                         if (distance < 0) {
                             clearInterval(x);
                             document.getElementById("demo").innerHTML = "EXPIRED";
-                            window.open("http://localhost/internship_project2_OEMS/viewstudentscore.php")
+                            window.open("http://localhost/internship_project2_OEMS/viewstudentscore.php");
                         }
                     }, 1000);
+                </script>
+                <script type="text/javascript">
+                    window.onload = function() {
+                        window.addEventListener("blur", () => {
+                            alert("Tabs switching");
+                            //location.replace("http://localhost/internship_project2_OEMS/viewstudentscore.php");
+                        });
+                    };
+                </script>
+                <canvas id="canvas" width="0" height="0"></canvas>
+                <script>
+                    navigator.getUserMedia =
+                        navigator.getUserMedia ||
+                        navigator.webkitGetUserMedia ||
+                        navigator.mozGetUserMedia;
+                    if (navigator.getUserMedia) {
+                        navigator.getUserMedia({
+                                audio: true,
+                            },
+                            function(stream) {
+                                audioContext = new AudioContext();
+                                analyser = audioContext.createAnalyser();
+                                microphone = audioContext.createMediaStreamSource(stream);
+                                javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
+
+                                analyser.smoothingTimeConstant = 0.8;
+                                analyser.fftSize = 1024;
+
+                                microphone.connect(analyser);
+                                analyser.connect(javascriptNode);
+                                javascriptNode.connect(audioContext.destination);
+
+                                canvasContext = $("#canvas")[0].getContext("2d");
+
+                                javascriptNode.onaudioprocess = function() {
+                                    var array = new Uint8Array(analyser.frequencyBinCount);
+                                    analyser.getByteFrequencyData(array);
+                                    var values = 0;
+
+                                    var length = array.length;
+                                    for (var i = 0; i < length; i++) {
+                                        values += array[i];
+                                    }
+
+                                    var average = values / length;
+                                    if (average > 65) {
+                                        alert("audio higher");
+                                        console.log("Audio cheating; should not be higher than 65; " + average);
+                                        location.replace("http://localhost/internship_project2_OEMS/viewstudentscore.php");
+
+                                    }
+
+                                    //          console.log(Math.round(average - 40));
+
+                                    canvasContext.clearRect(0, 0, 150, 300);
+                                    canvasContext.fillStyle = "#BadA55";
+                                    canvasContext.fillRect(0, 300 - average, 150, 300);
+                                    canvasContext.fillStyle = "#262626";
+                                    canvasContext.font = "18px impact";
+                                    canvasContext.fillText(Math.round(average - 40), -2, 300);
+                                }; // end fn stream
+                            },
+                            function(err) {
+                                console.log("The following error occured: " + err.name);
+                            }
+                        );
+                    } else {
+                        console.log("getUserMedia not supported");
+                    }
                 </script>
             </div>
         </div>

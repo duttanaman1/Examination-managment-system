@@ -29,7 +29,9 @@ session_start();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.5.5/jquery.smooth-scroll.min.js"></script>
 
-    <script src="style/TimeCircles.js"></script>
+
+    <script defer src="js/face-api.min.js"></script>
+    <script defer src="js/script.js"></script>
 </head>
 
 <body>
@@ -49,5 +51,8 @@ session_start();
                     <a class="nav-link" href="logout.php">Logout</a>
                 </li>
             </ul>
+            <div class="navbar-nav ml-auto mt-2 mt-lg-0 ">
+                <video id="video" width="100" height="75" autoplay="true" style="align-content: right"></video>
+            </div>
         </div>
     </nav>
